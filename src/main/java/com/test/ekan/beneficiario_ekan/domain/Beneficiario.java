@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioRequest;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,8 +30,17 @@ public class Beneficiario {
     @NotBlank
     private String nomeBeneficiario;
     @NotBlank
+    @Column(unique = true)
     private String telefone;
     private LocalDate dataDeNascimento;
     private LocalDateTime dataDeInclusao;
     private LocalDateTime dataDeAtualizacao;
+    
+    public Beneficiario(BeneficiarioRequest beneficiarioRequest) {
+        this.nomeBeneficiario = beneficiarioRequest.getNomeBeneficiario();
+        this.telefone = beneficiarioRequest.getTelefone();
+        this.dataDeNascimento = beneficiarioRequest.getDataDeNascimento();
+        this.dataDeInclusao = LocalDateTime.now();
+        this.dataDeAtualizacao = LocalDateTime.now();
+    }
 }
