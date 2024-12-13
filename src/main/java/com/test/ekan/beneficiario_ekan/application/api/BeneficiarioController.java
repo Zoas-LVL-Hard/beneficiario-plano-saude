@@ -2,6 +2,8 @@ package com.test.ekan.beneficiario_ekan.application.api;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.test.ekan.beneficiario_ekan.application.service.BeneficiarioService;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -10,13 +12,14 @@ import lombok.extern.log4j.Log4j2;
 @RestController
 @RequiredArgsConstructor
 public class BeneficiarioController implements BeneficiarioAPI {
-    //private final BeneficiarioService beneficiarioCriado;
+    private final BeneficiarioService beneficiarioService;
 
     @Override
     public BeneficiarioResponse postBeneficiario(@Valid BeneficiarioRequest beneficiarioRequest) {
         log.info("[Inicia] BeneficiarioController - postBeneficiario");
+        BeneficiarioResponse beneficiarioCriado = beneficiarioService.criaBeneficiario(beneficiarioRequest);
         log.info("[Finaliza] BeneficiarioController - postBeneficiario");
-        return null;
+        return beneficiarioCriado;
     }
 
 }
