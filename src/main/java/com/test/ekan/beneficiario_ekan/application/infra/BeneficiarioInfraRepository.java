@@ -22,7 +22,7 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository{
         try{
             beneficiarioSpringDataRepository.save(beneficiario);
         } catch (DataIntegrityViolationException e) {
-            throw APIException.build(HttpStatus.BAD_REQUEST, "Cliente já existe!", e);
+            throw APIException.build(HttpStatus.BAD_REQUEST, "Cliente já existe!");
         }
         log.info("[Finaliza] BeneficiarioInfraRepository - salva");
         return beneficiario;
