@@ -42,7 +42,10 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
 
     @Override
     public List<BeneficiarioListResponse> buscaTodosBeneficiarios() {
-        return null;
+        log.info("[Inicia] BeneficiarioApplicationService - buscaTodosBeneficiarios");
+        List<Beneficiario> beneficiarios = beneficiarioRepository.buscaTodos();
+        log.info("[Finaliza] BeneficiarioApplicationService - buscaTodosBeneficiarios");
+        return BeneficiarioListResponse.converte(beneficiarios);
     }
 
 

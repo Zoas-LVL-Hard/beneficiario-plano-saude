@@ -1,5 +1,6 @@
 package com.test.ekan.beneficiario_ekan.application.infra;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.dao.DataIntegrityViolationException;
@@ -39,6 +40,18 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
                 .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Beneficiário não encontrado!"));
         log.info("[Finaliza] BeneficiarioInfraRepository - buscaBeneficiarioId");
         return beneficiario;
+    }
+
+    @Override
+    public List<Beneficiario> buscaTodos() {
+        log.info("[Inicia] BeneficiarioInfraRepository - buscaBeneficiarioId");
+        if (beneficiarioSpringDataRepository.count() == 0) {
+            throw APIException.build(HttpStatus.NOT_FOUND, "Nenhum beneficiário encontrado!");
+        } 
+        List<Beneficiario> beneficiarios = beneficiarioSpringDataRepository.findAll();
+        log.info("[Finaliza] BeneficiarioInfraRepository - buscaBeneficiarioId");
+        return beneficiarios;
+        
     }
 
 }
