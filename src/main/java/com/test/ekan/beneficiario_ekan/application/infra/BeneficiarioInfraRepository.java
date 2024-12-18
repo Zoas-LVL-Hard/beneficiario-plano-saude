@@ -1,5 +1,7 @@
 package com.test.ekan.beneficiario_ekan.application.infra;
 
+import java.util.UUID;
+
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
@@ -14,17 +16,28 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @Repository
 @RequiredArgsConstructor
-public class BeneficiarioInfraRepository implements BeneficiarioRepository{
+public class BeneficiarioInfraRepository implements BeneficiarioRepository {
     private final BeneficiarioSpringDataRepository beneficiarioSpringDataRepository;
+
     @Override
     public Beneficiario salva(Beneficiario beneficiario) {
         log.info("[Inicia] BeneficiarioInfraRepository - salva");
-        try{
+        try {
             beneficiarioSpringDataRepository.save(beneficiario);
         } catch (DataIntegrityViolationException e) {
             throw APIException.build(HttpStatus.BAD_REQUEST, "Cliente já existe!");
         }
         log.info("[Finaliza] BeneficiarioInfraRepository - salva");
+        return beneficiario;
+    }
+
+    @Override
+    public Beneficiario buscaBeneficiarioId(UUID idBeneficiario) {
+        log.info("[Inicia] BeneficiarioInfraRepository - buscaBeneficiarioId");
+        Beneficiario beneficiario = beneficiarioSpringDataRepository
+                .findById(idBeneficiario)
+                .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Beneficiário não encontrado!"));
+        log.info("[Finaliza] BeneficiarioInfraRepository - buscaBeneficiarioId");
         return beneficiario;
     }
 

@@ -1,5 +1,7 @@
 package com.test.ekan.beneficiario_ekan.application.api;
 
+import java.util.UUID;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import com.test.ekan.beneficiario_ekan.application.service.BeneficiarioService;
@@ -20,6 +22,15 @@ public class BeneficiarioController implements BeneficiarioAPI {
         BeneficiarioResponse beneficiarioCriado = beneficiarioService.criaBeneficiario(beneficiarioRequest);
         log.info("[Finaliza] BeneficiarioController - postBeneficiario");
         return beneficiarioCriado;
+    }
+
+    @Override
+    public BeneficiarioDetalhadoResponse getBeneficiarioId(UUID idBeneficiario) {
+        log.info("[Inicia] BeneficiarioController - getBeneficiarioId");
+        log.info("[idBeneficiario] {}", idBeneficiario);
+        BeneficiarioDetalhadoResponse beneficiarioDetalhado = beneficiarioService.buscaBeneficiarioId(idBeneficiario);
+        log.info("[Finaliza] BeneficiarioController - getBeneficiarioId");
+        return beneficiarioDetalhado;
     }
 
 }
