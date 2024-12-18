@@ -1,5 +1,6 @@
 package com.test.ekan.beneficiario_ekan.application.api;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
@@ -24,5 +25,8 @@ public interface BeneficiarioAPI {
     @ResponseStatus(HttpStatus.OK)
     BeneficiarioDetalhadoResponse getBeneficiarioId(@PathVariable UUID idBeneficiario);
 
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    List<BeneficiarioListResponse> getTodosBeneficiarios();
         
 }
