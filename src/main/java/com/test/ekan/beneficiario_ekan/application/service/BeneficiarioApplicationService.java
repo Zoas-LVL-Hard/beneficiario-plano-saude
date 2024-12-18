@@ -1,10 +1,12 @@
 package com.test.ekan.beneficiario_ekan.application.service;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
 import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioDetalhadoResponse;
+import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioListResponse;
 import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioRequest;
 import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioResponse;
 import com.test.ekan.beneficiario_ekan.application.repository.BeneficiarioRepository;
@@ -37,5 +39,11 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
         log.info("[Finaliza] BeneficiarioApplicationService - buscaBeneficiarioId");
         return new BeneficiarioDetalhadoResponse(beneficiario);
     }
+
+    @Override
+    public List<BeneficiarioListResponse> buscaTodosBeneficiarios() {
+        return null;
+    }
+
 
 }
