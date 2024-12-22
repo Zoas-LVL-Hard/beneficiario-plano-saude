@@ -61,6 +61,9 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
     @Override
     public void patchAlteraBeneficiario(UUID idBeneficiario, BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest) {
         log.info("[Inicia] BeneficiarioApplicationService - patchAlteraBeneficiario");
+        Beneficiario beneficiario = beneficiarioRepository.buscaBeneficiarioId(idBeneficiario);
+        beneficiario.altera(beneficiarioAlteracaoRequest);
+        beneficiarioRepository.salva(beneficiario);
         log.info("[Finaliza] BeneficiarioApplicationService - patchAlteraBeneficiario");
 
     }

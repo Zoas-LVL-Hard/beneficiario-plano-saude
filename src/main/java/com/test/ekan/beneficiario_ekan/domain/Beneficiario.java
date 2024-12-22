@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioAlteracaoRequest;
 import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioRequest;
 
 import jakarta.persistence.Column;
@@ -35,12 +36,18 @@ public class Beneficiario {
     private LocalDate dataDeNascimento;
     private LocalDateTime dataDeInclusao;
     private LocalDateTime dataDeAtualizacao;
-    
+
     public Beneficiario(BeneficiarioRequest beneficiarioRequest) {
         this.nomeBeneficiario = beneficiarioRequest.getNomeBeneficiario();
         this.telefone = beneficiarioRequest.getTelefone();
         this.dataDeNascimento = beneficiarioRequest.getDataDeNascimento();
         this.dataDeInclusao = LocalDateTime.now();
         this.dataDeAtualizacao = LocalDateTime.now();
+    }
+
+    public void altera(BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest) {
+        this.nomeBeneficiario = beneficiarioAlteracaoRequest.getNomeBeneficiario();
+        this.telefone = beneficiarioAlteracaoRequest.getTelefone();
+        this.dataDeNascimento = beneficiarioAlteracaoRequest.getDataDeNascimento();
     }
 }
