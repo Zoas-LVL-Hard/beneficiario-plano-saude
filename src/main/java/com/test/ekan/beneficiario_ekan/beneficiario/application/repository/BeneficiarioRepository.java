@@ -1,9 +1,9 @@
-package com.test.ekan.beneficiario_ekan.application.repository;
+package com.test.ekan.beneficiario_ekan.beneficiario.application.repository;
 
 import java.util.List;
 import java.util.UUID;
 
-import com.test.ekan.beneficiario_ekan.domain.Beneficiario;
+import com.test.ekan.beneficiario_ekan.beneficiario.domain.Beneficiario;
 
 public interface BeneficiarioRepository {
 
