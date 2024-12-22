@@ -13,4 +13,6 @@ public interface BeneficiarioRepository {
 
     List<Beneficiario> buscaTodos();
 
+    void deletaBeneficiarioAtravezId(Beneficiario beneficiario);
+
 }

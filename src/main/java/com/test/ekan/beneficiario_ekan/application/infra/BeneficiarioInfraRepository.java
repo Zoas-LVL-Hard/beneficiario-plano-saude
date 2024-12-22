@@ -44,14 +44,22 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
 
     @Override
     public List<Beneficiario> buscaTodos() {
-        log.info("[Inicia] BeneficiarioInfraRepository - buscaBeneficiarioId");
+        log.info("[Inicia] BeneficiarioInfraRepository - buscaTodos");
         if (beneficiarioSpringDataRepository.count() == 0) {
             throw APIException.build(HttpStatus.NOT_FOUND, "Nenhum beneficiário encontrado!");
         } 
         List<Beneficiario> beneficiarios = beneficiarioSpringDataRepository.findAll();
-        log.info("[Finaliza] BeneficiarioInfraRepository - buscaBeneficiarioId");
+        log.info("[Finaliza] BeneficiarioInfraRepository - buscaTodos");
         return beneficiarios;
         
+    }
+
+    @Override
+    public void deletaBeneficiarioAtravezId(Beneficiario beneficiario) {
+        log.info("[Inicia] BeneficiarioInfraRepository - deletaBeneficiarioAtravezId");
+        beneficiarioSpringDataRepository.delete(beneficiario);
+        log.info("[Finaliza] BeneficiarioInfraRepository - deletaBeneficiarioAtravezId");
+
     }
 
 }
