@@ -52,4 +52,13 @@ public class BeneficiarioController implements BeneficiarioAPI {
 
     }
 
+    @Override
+    public void pathcAtualizaBeneficiario(UUID idBeneficiario, @Valid BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest) {
+        log.info("[Inicia] BeneficiarioController - pathcAtualizaBeneficiario");
+        log.info("[idBeneficiario] {}", idBeneficiario);
+        beneficiarioService.patchAlteraBeneficiario(idBeneficiario, beneficiarioAlteracaoRequest);
+        log.info("[Finaliza] BeneficiarioController - pathcAtualizaBeneficiario");
+
+    }
+
 }

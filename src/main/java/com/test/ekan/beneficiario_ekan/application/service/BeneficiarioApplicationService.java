@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioAlteracaoRequest;
 import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioDetalhadoResponse;
 import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioListResponse;
 import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioRequest;
@@ -57,5 +58,10 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
 
     }
 
+    @Override
+    public void patchAlteraBeneficiario(UUID idBeneficiario, BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest) {
+        log.info("[Inicia] BeneficiarioApplicationService - patchAlteraBeneficiario");
+        log.info("[Finaliza] BeneficiarioApplicationService - patchAlteraBeneficiario");
 
+    }
 }
