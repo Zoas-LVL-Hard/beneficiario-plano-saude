@@ -1,11 +1,11 @@
-package com.test.ekan.beneficiario_ekan.domain;
+package com.test.ekan.beneficiario_ekan.beneficiario.domain;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioAlteracaoRequest;
-import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioRequest;
+import com.test.ekan.beneficiario_ekan.beneficiario.application.api.BeneficiarioAlteracaoRequest;
+import com.test.ekan.beneficiario_ekan.beneficiario.application.api.BeneficiarioRequest;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

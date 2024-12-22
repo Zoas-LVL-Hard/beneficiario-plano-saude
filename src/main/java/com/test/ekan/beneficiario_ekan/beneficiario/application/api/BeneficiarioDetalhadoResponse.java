@@ -1,10 +1,10 @@
-package com.test.ekan.beneficiario_ekan.application.api;
+package com.test.ekan.beneficiario_ekan.beneficiario.application.api;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import com.test.ekan.beneficiario_ekan.domain.Beneficiario;
+import com.test.ekan.beneficiario_ekan.beneficiario.domain.Beneficiario;
 
 import lombok.Value;
 

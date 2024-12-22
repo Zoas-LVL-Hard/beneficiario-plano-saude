@@ -1,17 +1,17 @@
-package com.test.ekan.beneficiario_ekan.application.service;
+package com.test.ekan.beneficiario_ekan.beneficiario.application.service;
 
 import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioAlteracaoRequest;
-import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioDetalhadoResponse;
-import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioListResponse;
-import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioRequest;
-import com.test.ekan.beneficiario_ekan.application.api.BeneficiarioResponse;
-import com.test.ekan.beneficiario_ekan.application.repository.BeneficiarioRepository;
-import com.test.ekan.beneficiario_ekan.domain.Beneficiario;
+import com.test.ekan.beneficiario_ekan.beneficiario.application.api.BeneficiarioAlteracaoRequest;
+import com.test.ekan.beneficiario_ekan.beneficiario.application.api.BeneficiarioDetalhadoResponse;
+import com.test.ekan.beneficiario_ekan.beneficiario.application.api.BeneficiarioListResponse;
+import com.test.ekan.beneficiario_ekan.beneficiario.application.api.BeneficiarioRequest;
+import com.test.ekan.beneficiario_ekan.beneficiario.application.api.BeneficiarioResponse;
+import com.test.ekan.beneficiario_ekan.beneficiario.application.repository.BeneficiarioRepository;
+import com.test.ekan.beneficiario_ekan.beneficiario.domain.Beneficiario;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

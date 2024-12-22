@@ -1,4 +1,4 @@
-package com.test.ekan.beneficiario_ekan.application.infra;
+package com.test.ekan.beneficiario_ekan.beneficiario.infra;
 
 import java.util.List;
 import java.util.UUID;
@@ -7,8 +7,8 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
-import com.test.ekan.beneficiario_ekan.application.repository.BeneficiarioRepository;
-import com.test.ekan.beneficiario_ekan.domain.Beneficiario;
+import com.test.ekan.beneficiario_ekan.beneficiario.application.repository.BeneficiarioRepository;
+import com.test.ekan.beneficiario_ekan.beneficiario.domain.Beneficiario;
 import com.test.ekan.beneficiario_ekan.handler.APIException;
 
 import lombok.RequiredArgsConstructor;

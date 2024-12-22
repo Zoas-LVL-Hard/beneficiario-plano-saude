@@ -1,4 +1,4 @@
-package com.test.ekan.beneficiario_ekan.application.api;
+package com.test.ekan.beneficiario_ekan.beneficiario.application.api;
 
 import java.util.List;
 import java.util.UUID;

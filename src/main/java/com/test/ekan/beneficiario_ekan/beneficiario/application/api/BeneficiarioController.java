@@ -1,11 +1,11 @@
-package com.test.ekan.beneficiario_ekan.application.api;
+package com.test.ekan.beneficiario_ekan.beneficiario.application.api;
 
 import java.util.List;
 import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.test.ekan.beneficiario_ekan.application.service.BeneficiarioService;
+import com.test.ekan.beneficiario_ekan.beneficiario.application.service.BeneficiarioService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
