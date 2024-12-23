@@ -1,5 +1,8 @@
 package com.test.ekan.beneficiario_ekan.documento.application.api;
 
-public class DocumentoResponse {
+import lombok.Value;
 
+@Value
+public class DocumentoResponse {
+    private Long idDocumento;
 }
