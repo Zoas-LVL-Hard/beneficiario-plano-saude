@@ -22,8 +22,8 @@ import lombok.NoArgsConstructor;
 public class Documento {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", updatable = false, unique = true, nullable = false)
-    private long id;
+    @Column(name = "idDocumento", updatable = false, unique = true, nullable = false)
+    private Long idDocumento;
     @NotBlank
     private String tipoDocumento;
     @NotBlank
