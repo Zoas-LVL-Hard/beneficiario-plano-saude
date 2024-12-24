@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +28,9 @@ public class Documento {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "idDocumento", updatable = false, unique = true, nullable = false)
     private Long idDocumento;
+    @NotNull
+    @Column(name = "idProprietario", updatable = false, nullable = false)
+    private UUID idProprietario;
     @NotBlank
     @Column(unique = true)
     private String tipoDocumento;
@@ -36,6 +40,7 @@ public class Documento {
     private LocalDateTime dataDeAtualizacao;
 
     public Documento(UUID idBeneficiario, DocumentoRequest documentoRequest) {
+        this.idProprietario = idBeneficiario;
         this.tipoDocumento = documentoRequest.getTipoDocumento();
         this.descricao = documentoRequest.getDescricao();
         this.dataDeInclusao = LocalDateTime.now();

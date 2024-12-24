@@ -1,5 +1,8 @@
 package com.test.ekan.beneficiario_ekan.documento.infra;
 
+import java.util.List;
+import java.util.UUID;
+
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
@@ -26,6 +29,14 @@ public class DocumentoInfraRepository implements DocumentoRepository{
             throw APIException.build(HttpStatus.BAD_REQUEST, "Documento já cadastrado!");
         }
         log.info("[Finaliza] DocumentoInfraRepository - salvaDocumento");
+        return documento;
+    }
+
+    @Override
+    public List<Documento> buscaDocumentos(UUID idBeneficiario) {
+        log.info("[Inicia] DocumentoInfraRepository - buscaDocumentos");
+        var documento = documentoSpringDataJPARepository.findByIdProprietario(idBeneficiario);
+        log.info("[Finaliza] DocumentoInfraRepository - buscaDocumentos");
         return documento;
     }
 

@@ -6,12 +6,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 
 @RestController
@@ -21,5 +24,8 @@ public interface DocumentoAPI {
     @ResponseStatus(HttpStatus.CREATED)
     DocumentoResponse postDocumento(@PathVariable UUID idBeneficiario, @Valid @RequestBody DocumentoRequest documentoRequest);
     
+    @GetMapping()
+    @ResponseStatus(HttpStatus.OK)
+    List<DocumentoListResponse> getTodosDocumentos(@PathVariable UUID idBeneficiario);
     
 }

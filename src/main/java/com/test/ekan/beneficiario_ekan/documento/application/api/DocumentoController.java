@@ -1,5 +1,6 @@
 package com.test.ekan.beneficiario_ekan.documento.application.api;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +25,14 @@ public class DocumentoController implements DocumentoAPI {
         DocumentoResponse documento = documentoService.criaDocumento(idBeneficiario, documentoRequest);
         log.info("[Finaliza] DocumentoController - postDocumento");
         return documento;
+    }
+
+    @Override
+    public List<DocumentoListResponse> getTodosDocumentos(UUID idBeneficiario) {
+        log.info("[Inicia] DocumentoController - getTodosDocumentos");
+        List<DocumentoListResponse> documentosBeneficiario = documentoService.buscaTodosDocumentos(idBeneficiario);
+        log.info("[Finaliza] DocumentoController - getTodosDocumentos");
+        return documentosBeneficiario;
     }
 
 }
