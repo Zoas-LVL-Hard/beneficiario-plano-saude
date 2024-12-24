@@ -10,7 +10,7 @@ import com.test.ekan.beneficiario_ekan.documento.domain.Documento;
 import lombok.Value;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-//!Essa anotação serve para evitar que valores nullos apareçam no json, ou seja, que apareçam lá no postman.
+//Essa anotação serve para evitar que valores nullos apareçam no json, ou seja, que apareçam lá no postman.
 @Value
 public class DocumentoListResponse {
     private String tipoDocumento;
