@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "892d0f61-fa20-4634-9dd2-aababd80fec0",
+		"name": "Teste-Ekan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36524987"
+	},
+	"item": [
+		{
+			"name": "DOCUMENTO",
+			"item": [
+				{
+					"name": "POST NOVO DOCUMENTO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoDocumento\" : \"Teste de gravidez\",\r\n    \"descricao\" : \"Teste para identificar uma possível gravidez.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/plano-de-saude/api/v1/beneficiario/d855d06b-f920-4717-a787-b025d65c84ea/documento",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plano-de-saude",
+								"api",
+								"v1",
+								"beneficiario",
+								"d855d06b-f920-4717-a787-b025d65c84ea",
+								"documento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BUSCA TODOS DOCUMENTOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/plano-de-saude/api/v1/beneficiario/d855d06b-f920-4717-a787-b025d65c84ea/documento",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plano-de-saude",
+								"api",
+								"v1",
+								"beneficiario",
+								"d855d06b-f920-4717-a787-b025d65c84ea",
+								"documento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BENEFICIARIO",
+			"item": [
+				{
+					"name": "POST NOVO BENEFICIARIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeBeneficiario\" : \"Junior André\",\r\n    \"telefone\" : \"73981014450\",\r\n    \"dataDeNascimento\" : \"1999-03-19\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/plano-de-saude/api/v1/beneficiario",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plano-de-saude",
+								"api",
+								"v1",
+								"beneficiario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BUSCA BENEFICIARIO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/plano-de-saude/api/v1/beneficiario/idAqui!!",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plano-de-saude",
+								"api",
+								"v1",
+								"beneficiario",
+								"idAqui!!"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BUSCA TODOS BENEFICIARIOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/plano-de-saude/api/v1/beneficiario",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plano-de-saude",
+								"api",
+								"v1",
+								"beneficiario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE BENEFICIARIO ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/plano-de-saude/api/v1/beneficiario/88221d3d-ce84-4050-9d45-d0704dd1ee6e",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plano-de-saude",
+								"api",
+								"v1",
+								"beneficiario",
+								"88221d3d-ce84-4050-9d45-d0704dd1ee6e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH ATUALIZA BENEFICIARIO",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeBeneficiario\" : \"Junior Carlos\",\r\n    \"telefone\" : \"73981014470\",\r\n    \"dataDeNascimento\" : \"1999-03-19\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/plano-de-saude/api/v1/beneficiario/15cb81d2-b9fd-4476-b63b-c9ccee811a37",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plano-de-saude",
+								"api",
+								"v1",
+								"beneficiario",
+								"15cb81d2-b9fd-4476-b63b-c9ccee811a37"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
